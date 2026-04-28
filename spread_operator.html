@@ -22,5 +22,41 @@
         sumRest("CA",...arr);  //spread operator while function call
         
     </script>
+    <script>
+        var arr1 =[10,20,30,40];
+        console.log(arr1); //10,20,30,40
+        console.log(...arr1);//10 20 30 40
+        console.log([...arr1]); // 10,20,30,40
+    </script>
+    <script>
+        var arr1 =[10,20,30];
+        var arr2 = [40,50,60,70];
+        // var arr3 = arr1.concat(arr2); // using concat 
+        // var arr3 = [...arr1,...arr2]; // using spread operator
+        var arr3 = [5,...arr1,...arr2,75]; // can add value 
+
+        console.log(arr3);
+
+    </script>
+    <script>
+        var obj1 = {
+            name :"Ajay",
+            education:"Btech entc",
+        }
+        var obj2 = {
+            age : 24,
+            phone : 64218474689,
+
+        }
+        var obj3 ={...obj1,...obj2};
+
+        console.log(obj3);
+        document.write(obj3);
+        document.write(JSON.stringify(obj3));
+        document.write(`<pre>${JSON.stringify(obj3,null,4)}<pre>`);
+            //JSON.stringify(value,replacer,space)
+            document.write(`<pre> ${JSON.stringify(obj3,["name","age"],4)}<pre>`);
+                document.write(JSON.stringify(obj3,null,4));
+    </script>
 </body>
 </html>
