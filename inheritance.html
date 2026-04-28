@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>inheritance</title>
+</head>
+<body>
+    <script>
+        class Person{ // parent class
+            constructor(name,age){ // constructor method
+                this.pname =name; // assign value to the object's property
+                this.page =age;
+            }
+            showInfo(){
+                document.write(`My name is ${this.pname} and my age is ${this.page}<br>`);
+            }
+        }
+        class Student extends Person{ // child class
+            constructor(name,age,rollNo){
+                super(name,age); // calling parent constructor
+                this.rollNo = rollNo;
+            }
+            showStudent(){
+                document.write(`Student Info : Name : ${this.pname} Age : ${this.page} and Roll No : ${this.rollNo}<br>`)
+            }
+        }
+        class Employee extends Person{ // child class
+            constructor(name,age,salary){
+                super(name,age);
+                this.psalary = salary;
+            }
+            showDetails(){
+                document.write(`My name is ${this.pname} and my age is ${this.page} and Salary is : ${this.psalary}`);
+            }
+        }
+
+
+        const S1 = new Student("Sam",24,101);
+        const S2 = new Employee("Chandani",24,56838);
+        S1.showStudent();
+        S2.showDetails();
+
+        
+    </script>
+</body>
+</html>

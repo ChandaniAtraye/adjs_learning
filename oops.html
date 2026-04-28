@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>oops</title>
+</head>
+<body>
+    <script>
+        class hello{
+            message(){ // prototype method // instance method in java
+                document.write("Hello its CA" + "<br>");
+            }
+            hello(){
+                document.write("Hello Its A");
+            }
+        }
+        let a = new hello();
+        a.message();
+        a.hello();
+    </script>
+    <script>
+        class student {
+            constructor(){ // constructor method
+                document.write("Hello its constructor method" + "<br>");
+            }
+            static staticmethod(){
+                document.write("its static method" +"<br>");
+            }
+           
+        }
+        let b = new student(); // automatic constructor calling 
+        b.message(); // prototype calling with object 
+        // b.staticmethod();// not allowed
+        student.staticmethod(); // call with class not object 
+
+    </script>
+
+    <script>
+        class person{
+            constructor(name,age){ // constructor method
+                this.pname =name; // assign value to the object's property
+                this.page =age;
+            }
+            display(){
+                document.write(`My name is ${this.pname} and my age is ${this.page}<br>`);
+            }
+        }
+        let a1 = new person("Samya" ,23);
+        let a2 = new person ("chinmay",24);
+        a1.display();
+        a2.display();
+
+    </script>
+
+</body>
+</html>
