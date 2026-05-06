@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>async_await</title>
+</head>
+<body>
+    <script>
+        //async keyword always returns promise
+        //await keyword waits for a promise to resolve 
+        async function hello(){
+            return "hii";
+        }
+        console.log(hello());
+    </script>
+    <h2> Async Await example - ALL resolved task success</h2>
+    <pre id = "output"></pre>
+    <script>
+        const output = document.getElementById("output");
+
+        function log(msg){
+            output.textContent += msg + "\n";
+        }
+
+        function boilwater(){
+            return new Promise((resolve) =>{
+                setTimeout(() => resolve("water boiled"),3000)
+            });
+        }
+
+            function makeTea(){
+            return new Promise((resolve) =>{
+                setTimeout(() => resolve("Tea is ready"),2000)
+            });
+        }
+
+            function toastBread(){
+            return new Promise((resolve) =>{
+                setTimeout(() => resolve("Bread Toast"),1500)
+            });
+        }
+
+        async function makeBreakfast(){
+            try{
+                log("Starting Breakfast preparation....");
+
+                const step1 = await boilwater();
+                log(step1);
+                const step2 = await makeTea();
+                log(step2);
+                const step3 = await toastBread();
+                log(step3);
+
+                log("All breakfast items are reddy");
+            }
+            catch(error){
+                log("Error Occured" + error);
+            }
+            finally{
+            log("Breakfast preparation Completed");
+            }
+
+        }
+        log("Kitchen is opened");
+        makeBreakfast();
+    </script>
+</body>
+</html>
