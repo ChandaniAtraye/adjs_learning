@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hoisting</title>
+</head>
+<body>
+    <!-- hoisting means javascript moves all variable and function declaration to the top of there scope(before execution)  -->
+     <!-- Hoisting happen in global scope and function scope -->
+      <!-- variable declared but not initialized called TDZ  temporal dead zone-->
+    <!-- <script>
+        console.log(a); //undefined
+        var a =10;
+        //  let a =10;  // let and const not in use reference error
+        //   const a =10;
+       
+    </script> -->
+    <!-- <script>
+        var a; //hoisted
+        console.log(a);
+        a =10;
+    </script> -->
+    <script>
+         test(); // its works with function
+        function test(){
+            console.log("hello");
+        }
+       
+    </script>
+</body>
+</html>
